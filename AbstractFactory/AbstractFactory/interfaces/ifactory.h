@@ -7,7 +7,7 @@
 class IFactory
 {
 public:
-    IFactory();
+    //IFactory();
     virtual IProduct1* createProduct1() = 0;
     virtual IProduct2* createProduct2() = 0;
 };
