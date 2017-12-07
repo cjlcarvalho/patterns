@@ -5,7 +5,7 @@
 class IProduct1
 {
 public:
-    IProduct1();
+    //IProduct1();
     virtual void sayHi() = 0;
 };
 
