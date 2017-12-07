@@ -1,11 +1,9 @@
 #ifndef IPRODUCT1_H
 #define IPRODUCT1_H
 
-
 class IProduct1
 {
 public:
-    //IProduct1();
     virtual void sayHi() = 0;
 };
 
