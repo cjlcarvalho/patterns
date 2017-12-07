@@ -17,7 +17,6 @@ int main()
         cout << "2 - Factory2" << endl;
         cout << "Digite: ";
         cin >> opt;
-        cout << opt << endl;
         if(opt == 1)
             factory = new Factory1;
 	else if(opt == 2)
