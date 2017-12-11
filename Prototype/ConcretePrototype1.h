@@ -8,6 +8,7 @@ class ConcretePrototype1 : public IPrototype {
         ConcretePrototype1(int);
         ConcretePrototype1(const ConcretePrototype1*);
         IPrototype* clone();
+        void talk();
     private:
         int _id;
 };

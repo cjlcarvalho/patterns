@@ -4,6 +4,7 @@
 class IPrototype {
     public:
         virtual IPrototype* clone() = 0;
+        virtual void talk() = 0;
 };
 
 #endif // IPROTOTYPE_H
