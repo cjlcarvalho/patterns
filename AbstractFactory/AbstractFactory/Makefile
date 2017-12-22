@@ -5,3 +5,5 @@ program : $(FILES)
 	$(CPP) $(FILES) $(FLAGS)
 clean:
 	rm a.out
+run:
+	./a.out
