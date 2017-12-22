@@ -8,8 +8,14 @@
 #include "interfaces/IMotor.h"
 
 class MyFactory : public ICarFactory {
-	private:
-		int _pneu;
+    public:
+        static MyFactory* getInstance(int pneu, int chassi, int motor);
+        IPneu* createPneu();
+        IChassi* createChassi();
+        IMotor* createMotor();
+    private:
+		MyFactory(int pneu, int chassi, int motor);
+        int _pneu;
 		int _chassi;
 		int _motor;
 		int _pneuCont;
@@ -19,12 +25,6 @@ class MyFactory : public ICarFactory {
 		std::vector<IChassi*> _chassis;
 		std::vector<IMotor*> _motores;
 		static MyFactory* _instance;
-		MyFactory(int, int, int);
-	public:
-		static MyFactory* getInstance(int, int, int);
-		IPneu* createPneu();
-		IChassi* createChassi();
-		IMotor* createMotor();
 };
 
 #endif // MYFACTORY_H
