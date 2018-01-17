@@ -6,6 +6,7 @@
 
 Director::Director()
 {
+
 }
 
 void Director::addBuilder(Builder *builder)
@@ -21,9 +22,9 @@ void Director::construct() const
     }
 }
 
-std::vector<Product*> Director::products() const
+std::vector<Product *> Director::products() const
 {
-    std::vector<Product*> productsVec;
+    std::vector<Product *> productsVec;
 
     for (Builder *builder : m_builders) {
         if (builder)
