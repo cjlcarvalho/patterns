@@ -9,8 +9,8 @@ class ConcreteBuilder2 : public Builder
 {
 public:
     ConcreteBuilder2();
-    void buildPart();
-    Product *getResult() const;
+    void buildPart() override;
+    Product *getResult() const override;
 
 private:
     Product *m_result;

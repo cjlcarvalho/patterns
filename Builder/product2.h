@@ -7,7 +7,7 @@ class Product2 : public Product
 {
 public:
     Product2();
-    void doSomething();
+    void doSomething() override;
 };
 
 #endif // PRODUCT2_H
