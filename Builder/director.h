@@ -13,10 +13,10 @@ public:
     Director();
     void addBuilder(Builder *builder);
     void construct() const;
-    std::vector<Product*> products();
+    std::vector<Product *> products() const;
 
 private:
-    std::vector<Builder*> m_builders;
+    std::vector<Builder *> m_builders;
 };
 
 #endif // DIRECTOR_H

@@ -21,7 +21,7 @@ void Director::construct() const
     }
 }
 
-std::vector<Product*> Director::products()
+std::vector<Product*> Director::products() const
 {
     std::vector<Product*> productsVec;
 

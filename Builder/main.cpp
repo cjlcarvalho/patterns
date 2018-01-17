@@ -11,9 +11,9 @@ int main()
 
     director.construct();
 
-    std::vector<Product*> products = director.products();
+    std::vector<Product *> products = director.products();
 
-    for (Product* product : products)
+    for (Product *product : products)
         product->doSomething();
 
     return 0;

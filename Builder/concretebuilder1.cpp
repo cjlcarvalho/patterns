@@ -13,7 +13,7 @@ void ConcreteBuilder1::buildPart()
     m_result = new Product1;
 }
 
-Product *ConcreteBuilder1::getResult()
+Product *ConcreteBuilder1::getResult() const
 {
     return m_result;
 }

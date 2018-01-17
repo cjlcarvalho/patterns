@@ -10,7 +10,7 @@ class ConcreteBuilder2 : public Builder
 public:
     ConcreteBuilder2();
     void buildPart();
-    Product *getResult();
+    Product *getResult() const;
 
 private:
     Product *m_result;

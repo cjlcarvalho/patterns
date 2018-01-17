@@ -7,7 +7,7 @@ class Builder
 {
 public:
     virtual void buildPart() = 0;
-    virtual Product *getResult() = 0;
+    virtual Product *getResult() const = 0;
 };
 
 #endif // BUILDER_H
