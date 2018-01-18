@@ -1,22 +1,24 @@
 #ifndef ADAPTERTVMONITOR_H
 #define ADAPTERTVMONITOR_H
 
+#include <string>
+
 #include "itelevisao.h"
 #include "imonitor.h"
-#include "sonytv.h"
-#include "samsungmonitor.h"
 
 class AdapterTVMonitor : public ITelevisao, public IMonitor
 {
 public:
-    AdapterTVMonitor(const SonyTV& tv);
-    AdapterTVMonitor(const SamsungMonitor& monitor);
-    void apresentarProgramas() override;
-    void exibirInterface() override;
+    AdapterTVMonitor(ITelevisao *tv);
+    AdapterTVMonitor(IMonitor *monitor);
+    void apresentarProgramas(std::string nomePrograma) override;
+    void exibirInterface(std::string nomeInterface) override;
+    void setTV(ITelevisao *tv);
+    void setMonitor(IMonitor *monitor);
 
 private:
-    SonyTV m_tv;
-    SamsungMonitor m_monitor;
+    ITelevisao *m_tv;
+    IMonitor *m_monitor;
 };
 
 #endif // ADAPTERTVMONITOR_H

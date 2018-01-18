@@ -1,23 +1,37 @@
 #include "adaptertvmonitor.h"
-#include "sonytv.h"
+#include "itelevisao.h"
+#include "imonitor.h"
 #include "samsungmonitor.h"
+#include "sonytv.h"
 
-AdapterTVMonitor::AdapterTVMonitor(const SonyTV& tv) :
-    m_tv(tv)
+AdapterTVMonitor::AdapterTVMonitor(ITelevisao *tv) :
+    m_tv(tv),
+    m_monitor(new SamsungMonitor)
 {
 }
 
-AdapterTVMonitor::AdapterTVMonitor(const SamsungMonitor& monitor) :
-    m_monitor(monitor)
+AdapterTVMonitor::AdapterTVMonitor(IMonitor *monitor) :
+    m_monitor(monitor),
+    m_tv(new SonyTV)
 {
 }
 
-void AdapterTVMonitor::apresentarProgramas()
+void AdapterTVMonitor::setTV(ITelevisao *tv)
 {
-    m_monitor.exibirInterface();
+    m_tv = tv;
 }
 
-void AdapterTVMonitor::exibirInterface()
+void AdapterTVMonitor::setMonitor(IMonitor *monitor)
 {
-    m_tv.apresentarProgramas();
+    m_monitor = monitor;
+}
+
+void AdapterTVMonitor::apresentarProgramas(std::string nomePrograma)
+{
+    m_monitor->exibirInterface(nomePrograma);
+}
+
+void AdapterTVMonitor::exibirInterface(std::string nomeInterface)
+{
+    m_tv->apresentarProgramas(nomeInterface);
 }
