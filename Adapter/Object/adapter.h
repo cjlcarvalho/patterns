@@ -9,8 +9,8 @@ class Adapter : public Target
 {
 public:
     Adapter();
-    void request();
-    void setAdaptee(Adaptee *adaptee);
+    void request() override;
+    void setAdaptee(Adaptee *adaptee) override;
 
 private:
     Adaptee *m_Adaptee;

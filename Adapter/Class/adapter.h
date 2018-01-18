@@ -8,7 +8,7 @@ class Adapter : public Target, public Adaptee
 {
 public:
     Adapter();
-    void request();
+    void request() override;
 };
 
 #endif // ADAPTER_H
