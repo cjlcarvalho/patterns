@@ -17,19 +17,20 @@ void Categoria::aumentarPreco(double valor)
         child->aumentarPreco(valor);
 }
 
-Component *Categoria::addChild(Component *child)
+bool Categoria::addChild(Component *child)
 {
     m_children.push_back(child);
-    return child;
+    return true;
 }
 
-Component *Categoria::removeChild(Component *child)
+bool Categoria::removeChild(Component *child)
 {
     for (unsigned int i = 0; i < m_children.size(); i++)
         if (child == m_children[i]) {
+            delete m_children[i];
             m_children.erase(m_children.begin() + i);
-            return child;
+            return true;
         }
 
-    return nullptr;
+    return false;
 }

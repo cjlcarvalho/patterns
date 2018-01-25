@@ -8,13 +8,12 @@ class Component
 {
 public:
     Component(int id, std::string nome);
+    virtual ~Component();
     virtual void aumentarPreco(double valor) = 0;
-    virtual Component *addChild(Component *child);
-    virtual Component *removeChild(Component *child);
+    virtual bool addChild(Component *child);
+    virtual bool removeChild(Component *child);
     virtual std::vector<Component *> children() const;
     virtual void mostrar() = 0;
-
-    bool operator==(Component *other);
 
 protected:
     int m_id;

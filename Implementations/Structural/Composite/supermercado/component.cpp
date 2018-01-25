@@ -6,19 +6,21 @@ Component::Component(int id, std::string nome) :
 {
 }
 
-Component *Component::addChild(Component *child)
+Component::~Component()
 {
-    return nullptr;
+    for (Component *child : m_children)
+        delete child;
+    m_children.clear();
 }
 
-Component *Component::removeChild(Component *child)
+bool Component::addChild(Component *child)
 {
-    return nullptr;
+    return false;
 }
 
-bool Component::operator==(Component *other)
+bool Component::removeChild(Component *child)
 {
-    return m_id == other->m_id;
+    return false;
 }
 
 std::vector<Component *> Component::children() const

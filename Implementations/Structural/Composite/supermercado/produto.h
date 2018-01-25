@@ -8,7 +8,7 @@ class Produto : public Component
 public:
     Produto(int id, std::string nome, double preco);
     void aumentarPreco(double valor) override;
-    void mostrar();
+    void mostrar() override;
 
 private:
     double m_preco;
