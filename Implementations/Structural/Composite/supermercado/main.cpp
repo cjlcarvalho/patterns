@@ -2,7 +2,6 @@
 #include <iostream>
 
 #include "component.h"
-#include "supermercado.h"
 #include "categoria.h"
 #include "produto.h"
 
@@ -22,7 +21,7 @@ int main()
     
     vestuario->addChild(camisa);
 
-    Supermercado *mercado = new Supermercado(6, "Supermercado");
+    Categoria *mercado = new Categoria(6, "Supermercado");
 
     mercado->addChild(vestuario);
     mercado->addChild(alimentos);
