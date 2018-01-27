@@ -2,26 +2,26 @@
 #include <iostream>
 
 #include "component.h"
-#include "categoria.h"
+#include "marketcomposite.h"
 #include "produto.h"
 
 int main()
 {
-    Produto *arroz = new Produto(1, "Arroz", 4.00);
-    Produto *feijao = new Produto(2, "Feijao", 5.00);
+    Component *arroz = new Produto(4.00);
+    Component *feijao = new Produto(5.00);
 
-    Categoria *alimentos = new Categoria(3, "Alimentos");
+    Component *alimentos = new MarketComposite;
 
     alimentos->addChild(arroz);
     alimentos->addChild(feijao);
 
-    Produto *camisa = new Produto(4, "Camisa", 10.00);
+    Component *camisa = new Produto(10.00);
 
-    Categoria *vestuario = new Categoria(5, "Vestuário");
+    Component *vestuario = new MarketComposite;
     
     vestuario->addChild(camisa);
 
-    Categoria *mercado = new Categoria(6, "Supermercado");
+    Component *mercado = new MarketComposite;
 
     mercado->addChild(vestuario);
     mercado->addChild(alimentos);
@@ -47,6 +47,12 @@ int main()
     mercado->mostrar();
 
     std::cout << std::endl;
+
+    std::cout << alimentos->removeChild(feijao) << "\n\n";  // feijao está presente
+
+    std::cout << alimentos->removeChild(camisa) << "\n\n";  // camisa não está presente
+
+    mercado->mostrar();
 
     return 0;
 }

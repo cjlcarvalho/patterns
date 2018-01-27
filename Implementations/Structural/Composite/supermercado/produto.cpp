@@ -2,8 +2,7 @@
 
 #include <iostream>
 
-Produto::Produto(int id, std::string nome, double preco) :
-    Component(id, nome),
+Produto::Produto(double preco) :
     m_preco(preco)
 {
 }
@@ -13,7 +12,7 @@ void Produto::aumentarPreco(double valor)
     m_preco += (m_preco * valor);
 }
 
-void Produto::mostrar()
+void Produto::mostrar() const
 {
     std::cout << m_preco << std::endl;
 }
