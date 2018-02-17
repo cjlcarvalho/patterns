@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
     MyFactory *f = MyFactory::instance();
-    f->addPrototype("Pneu", new ConcretePneu, 2);
+    f->addPrototype("Pneu", new ConcretePneu, 4);
 
     IPneu *m1 = (IPneu *)f->create("Pneu");
     IPneu *m2 = (IPneu *)f->create("Pneu");
@@ -28,6 +28,7 @@ int main()
     IPneu *m5 = (IPneu *)f->create("Pneu");
 
     if (m1 == m5) cout << "M1 M5 IGUAIS" << endl;
+    else cout << "M1 M5 DIFERENTES" << endl;
 
     if (m1 == m4) cout << "M1 M4 IGUAIS" << endl;
     else cout << "M1 M4 DIFERENTES" << endl;
