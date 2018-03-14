@@ -24,7 +24,7 @@
 
 - [ ] Flyweight
 
-- [ ] Proxy
+- [x] Proxy
 
 - [ ] Chain of Responsibility
 
