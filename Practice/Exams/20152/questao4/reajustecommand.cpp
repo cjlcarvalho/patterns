@@ -8,7 +8,12 @@ ReajusteCommand::ReajusteCommand(Component *component, double porcentagem) :
 
 }
 
-void ReajusteCommand::aumentarPreco()
+void ReajusteCommand::undo()
+{
+    m_component->aumentarPreco(-m_porcentagem);
+}
+
+void ReajusteCommand::redo()
 {
     m_component->aumentarPreco(m_porcentagem);
 }

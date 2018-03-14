@@ -7,7 +7,8 @@ class ReajusteCommand
 {
 public:
     ReajusteCommand(Component *component, double porcentagem);
-    void aumentarPreco();
+    void undo();
+    void redo();
 
 private:
     Component *m_component;
