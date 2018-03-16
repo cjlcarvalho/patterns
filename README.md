@@ -22,7 +22,7 @@
 
 - [x] Façade
 
-- [ ] Flyweight
+- [x] Flyweight
 
 - [x] Proxy
 
