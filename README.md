@@ -26,7 +26,7 @@
 
 - [x] Proxy
 
-- [ ] Chain of Responsibility
+- [x] Chain of Responsibility
 
 - [x] Command
 
