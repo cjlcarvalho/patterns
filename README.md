@@ -38,7 +38,7 @@
 
 - [ ] Memento
 
-- [ ] Observer
+- [x] Observer
 
 - [ ] State
 
