@@ -8,7 +8,7 @@ class IComponent;
 class LogDecorator :  public Decorator
 {
 public:
-    LogDecorator(IComponent *decorated = 0);
+    LogDecorator(IComponent *decorated = nullptr);
     void aumentarPreco(double percentual);
 };
 

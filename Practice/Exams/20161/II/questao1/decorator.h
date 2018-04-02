@@ -7,7 +7,7 @@ class Decorator : public IComponent
 {
 public:
     void aumentarPreco(double percentual);
-    virtual Decorator *clone() = 0;
+    void setDecorated(IComponent *component);
 
 protected:
     Decorator(IComponent *decorated = 0);

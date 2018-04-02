@@ -8,7 +8,7 @@ class IComponent;
 class TwitterDecorator : public Decorator
 {
 public:
-    TwitterDecorator(IComponent *decorated = 0);
+    TwitterDecorator(IComponent *decorated = nullptr);
     void aumentarPreco(double percentual);
 };
 

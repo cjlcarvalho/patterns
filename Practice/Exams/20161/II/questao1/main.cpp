@@ -18,10 +18,10 @@ int main(int argc, char *argv[])
     laticiniosRoot->addChild(new Queijo(10.0));
     compositeRoot->addChild(cereaisRoot);
     compositeRoot->addChild(laticiniosRoot);
-    IComponent *erro1 = new IComponent;
-    Composite *erro2 = new Composite;
-    Decorator *erro3 = new Decorator;
-    Decorator *erro4 = new Decorator(new TwitterDecorator);
+    // IComponent *erro1 = new IComponent;
+    //Composite *erro2 = new Composite;
+    // Decorator *erro3 = new Decorator;
+    // Decorator *erro4 = new Decorator(new TwitterDecorator);
     compositeRoot->addChild(new TwitterDecorator);
     decoratorStart->setDecorated(new Arroz(4.0)); // DEVE GERAR EXCEPTION
     compositeRoot->setDecorator(decoratorStart);

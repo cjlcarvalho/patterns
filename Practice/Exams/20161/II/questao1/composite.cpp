@@ -4,8 +4,16 @@
 
 #include "decorator.h"
 
+Composite::Composite()
+{
+
+}
+
 bool Composite::addChild(IComponent *child)
 {
+    if (dynamic_cast<Decorator *>(child))
+        return false;
+
     m_children << child;
     return true;
 }
@@ -18,12 +26,25 @@ bool Composite::removeChild(IComponent *child)
 
 void Composite::aumentarPreco(double percentual)
 {
-    foreach(IComponent *child, m_children)
-        child->aumentarPreco(percentual);
+    for(IComponent *child : m_children) {
+        if (child->setDecorator(m_decorator))
+            child->aumentarPreco(percentual);
+        else {
+            m_decorator->setDecorated(child);
+            m_decorator->aumentarPreco(percentual);
+            m_decorator->setDecorated(nullptr);
+        }
+
+        // caso for folha, não vai conseguir setar o decorator
+        // caso setar o decorator, chame o aumentarPreco dele (ou seja, é composite)
+    }
 }
 
-void Composite::setDecorator(Decorator *decorator)
+bool Composite::setDecorator(Decorator *decorator)
 {
     for (IComponent *child : m_children)
-        child = decorator->clone()->setDecorated(child);
+        child->setDecorator(decorator);
+
+    m_decorator = decorator;
+    return true;
 }
