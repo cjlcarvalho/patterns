@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     // Decorator *erro3 = new Decorator;
     // Decorator *erro4 = new Decorator(new TwitterDecorator);
     compositeRoot->addChild(new TwitterDecorator);
-    decoratorStart->setDecorated(new Arroz(4.0)); // DEVE GERAR EXCEPTION
+    decoratorStart->setDecorated(new Arroz(4.0));
     compositeRoot->setDecorator(decoratorStart);
     compositeRoot->aumentarPreco(0.1);
     // DEVE EXIBIR:

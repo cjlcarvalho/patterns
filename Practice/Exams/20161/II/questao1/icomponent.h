@@ -9,7 +9,7 @@ public:
     virtual void aumentarPreco(double percentual) = 0;
     virtual bool addChild(IComponent *child);
     virtual bool removeChild(IComponent *child);
-    virtual bool setDecorator(Decorator *decorator);
+    virtual void setDecorator(Decorator *decorator);
 };
 
 #endif // ICOMPONENT_H

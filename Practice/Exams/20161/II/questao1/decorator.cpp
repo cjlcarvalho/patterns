@@ -15,9 +15,9 @@ void Decorator::setDecorated(IComponent *decorated)
     if (!m_decorated)
         m_decorated = decorated;
     else {
-        Decorator *decorator = dynamic_cast<Decorator *>(m_decorated);
-        if (decorator)
-            decorator->setDecorated(decorated);
+        Decorator *myDecorator = dynamic_cast<Decorator *>(m_decorated);
+        if (myDecorator)
+            myDecorator->setDecorated(decorated);
         else
             m_decorated = decorated;
     }

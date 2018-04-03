@@ -15,8 +15,7 @@ bool IComponent::removeChild(IComponent *child)
     return false;
 }
 
-bool IComponent::setDecorator(Decorator *decorator)
+void IComponent::setDecorator(Decorator *decorator)
 {
     Q_UNUSED(decorator);
-    return false;
 }

@@ -14,7 +14,7 @@ public:
     bool addChild(IComponent *child);
     bool removeChild(IComponent *child);
     void aumentarPreco(double percentual);
-    bool setDecorator(Decorator *decorator) override;
+    void setDecorator(Decorator *decorator) override;
 
 private:
     QList<IComponent *> m_children;
