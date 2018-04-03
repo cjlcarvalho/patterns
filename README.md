@@ -32,7 +32,7 @@
 
 - [ ] Interpreter
 
-- [ ] Iterator
+- [x] Iterator
 
 - [ ] Mediator
 
