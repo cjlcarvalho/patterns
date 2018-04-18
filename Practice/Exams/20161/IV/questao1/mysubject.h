@@ -14,7 +14,7 @@ public:
     void changeState(string state);
     string state() const;
 
-protected:
+private:
     string m_state;
 };
 

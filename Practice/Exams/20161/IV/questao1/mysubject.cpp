@@ -3,7 +3,6 @@
 MySubject::MySubject(string name) :
     Subject(name)
 {
-
 }
 
 void MySubject::changeState(string state)

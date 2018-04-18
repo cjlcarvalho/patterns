@@ -5,17 +5,6 @@
 
 using namespace std;
 
-Subject::Subject(string name) :
-    m_name(name)
-{
-}
-
-void Subject::notify(string stateName)
-{
-    for (Observer *observer : m_observers)
-        observer->update(this, stateName);
-}
-
 void Subject::attach(Observer *observer)
 {
     m_observers.push_back(observer);
@@ -29,7 +18,8 @@ void Subject::dettach(Observer *observer)
         m_observers.erase(it);
 }
 
-string Subject::name() const
+void Subject::notify()
 {
-    return m_name;
+    for (Observer *observer : m_observers)
+        observer->update(this);
 }

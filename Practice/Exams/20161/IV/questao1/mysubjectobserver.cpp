@@ -10,7 +10,7 @@ MySubjectObserver::MySubjectObserver(string name) :
 
 }
 
-void update(Subject *subject, string stateName)
+void MySubjectObserver::update(Subject *subject, string stateName)
 {
     MySubject *m = dynamic_cast<MySubject *>(subject);
 

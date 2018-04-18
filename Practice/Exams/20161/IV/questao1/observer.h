@@ -1,11 +1,11 @@
 #ifndef OBSERVER_H
 #define OBSERVER_H
 
+#include "subject.h"
+
 #include <string>
 
 using namespace std;
-
-class Subject;
 
 class Observer
 {
